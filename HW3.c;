@@ -2,86 +2,78 @@
 //Jacqueline Lyons 
 //7-7-2022
 //CS50-SMC
+//Written in C++ shell, then moved to github file. 
 
 #include<stdio.h>
 
 void calendar(int year,char* month[])
 {
 
-int i=0;
-int f=0;
-int d=1;
-int days=0;
+        int i=0;
+        int f=0;
+        int d=1;
+        int days=0;
 
-//find first day
+//first_day
 int first_day=((year-1)*365+(year-1)/4-(year-1)/100+(year-1)/400 +1)%7;
 while(i<12)
 { d=1;
-printf("\n %-23s",month[i]);
-printf("%d\n",year);
-printf("%s %s %s %s %s %s %s\n"," SUN","MON","TUE","WED","THU","FRI","SAT");
+        printf("\n %-23s",month[i]);
+        printf("%d\n",year);
+        printf("%s %s %s %s %s %s %s\n"," SUN","MON","TUE","WED","THU","FRI","SAT");
 
 //days per month
-if((i+1)<=7){
-if((i+1)==2)
-days=28;
-else if((i+1)%2==0)
-days=30;
+        if((i+1)<=7){
+        if((i+1)==2)
+        days=28;
+        else if((i+1)%2==0)
+        days=30;
 else
-days=31;
+        days=31;
 }
 else{
-if((i+1)==8)
-days=31;
-else if((i+1)%2==0)
-days=31;
+        if((i+1)==8)
+        days=31;
+        else if((i+1)%2==0)
+        days=31;
 else
-days=30;
+        days=30;
 }
 
 //loop printing month/calender
-for(f=0;f<first_day;f++)
+        for(f=0;f<first_day;f++)
 {
-printf(" ");
+        printf(" ");
 }
-
-while(d<=days)
+        while(d<=days)
 {
+        printf("%4d",d);
+        f++;
 
-printf("%4d",d);
-
-f++;
-
-if (f>6) {
-f = 0;
-printf("\n");
+        if (f>6) {
+        f = 0;
+        printf("\n");
 
 }
 
-d++;
+        d++;
 }
-
-first_day=f;
-
-
-i=i+1;
-
+        first_day=f;
+        i=i+1;
 }
-
-
 }
-int main() {
-int year;
+        int main() {
+        int year;
 
 
 char* month[]={"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"};
 printf("Enter the year for your calendar: ");
 
-scanf("%d",&year);
+        scanf("%d",&year);
 
-calendar(year,month);
+        calendar(year,month);
 
-printf("\n");
-printf("Do you want to continue again(Y/N): ");
+        printf("\n");
+        printf("Do you want to continue again(Y/N): ");
 
 }
