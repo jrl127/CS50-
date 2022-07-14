@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Calories = ((Age * 0.2757) + (Weight * 0.03295) + (Heart Rate x 1.0781) — 75.4991) * Time / 8.368
+
+int main() {
+    double ageYears;
+    double weightPounds;
+    double heartBPM;
+    double timeMinutes;
+    double calories;  
+   
+  //input
+    scanf("%lf", &ageYears);
+    scanf("%lf", &weightPounds);
+    scanf("%lf", &heartBPM);
+    scanf("%lf", &timeMinutes);
+    
+  
+  calories = ((ageYears * 0.2757) + (weightPounds * 0.03295) + (heartBPM * 1.0781) - 75.4991) * timeMinutes / 8.368;
+                 
+   printf("Calories: %0.2lf calories\n", calories);
+
+   return 0;
+}
