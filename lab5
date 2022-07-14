@@ -1,0 +1,197 @@
+//p1
+//Write a program that performs arithmetic division. The program will use two integers, a and b (obtained by the user) and will perform the division a/b,
+//store the result in another integer c and show the result of the division using cout. In a similar way, extend the program to add, subtract, multiply,
+//do modulo and power using integers a and b. Modify your program so that when it starts, it asks the user which type of calculation it should do, 
+//then asks for the 2 integers, then runs the user selected calculation and outputs the result in a user friendly formatted manner.
+
+
+#include <iostream> 
+using namespace std; 
+int AddTwo (int addend1, int addend2)  { 
+  return addend1 + addend2; 
+} 
+int main ()  { 
+  int number1, number2, sum; 
+   
+  cout << "Enter two integers:\n"; 
+  cin >> number1 >> number2; 
+  sum = AddTwo(number1, number2); 
+  cout << "\nThe sum is " << sum << "."; 
+   
+   
+}
+
+
+
+
+
+
+
+//p2
+//Basically the same as exercise 1, but this time, the function that adds the numbers should be void, and takes a third, pass by reference parameter; 
+//then puts the sum in that.
+
+
+
+#include <iostream> 
+using namespace std; 
+void addNum(int, int, int&); 
+int main() 
+{ 
+  int number1,number2,sum; 
+   
+  //get values; 
+  cout<<"Enter two integers to add"<<endl; 
+   
+  cout<<"Enter Number 1: "; 
+  cin>>number1; 
+  cout<<"Enter Number 2: "; 
+  cin>>number2; 
+   
+  //call addNum to add the numbers 
+  addNum(number1, number2, sum); 
+   
+  //print sum 
+  cout<<number1<<" + "<<number2<<" = "<<sum; 
+ return 0; 
+} 
+void addNum(int addend1, int addend2, int &sum)
+{ 
+  sum = addend1 + addend2; 
+}
+
+
+
+
+
+//p3
+//Write a recursive function that finds the #n integer of the Fibonacci sequence. Then build a minimal program to test it. 
+
+
+
+
+
+
+
+#include <iostream> 
+using namespace std; 
+unsigned fib(unsigned n); 
+int main() 
+{ 
+    // Printing the first 20 Fibonacci sequence values 
+    for (unsigned i = 0; i < 20; i++){ 
+        cout << "fib(" << i << ") = " << fib(i) << endl; 
+    } 
+} 
+unsigned fib(unsigned n) 
+{ 
+    if (n < 2) 
+        return n; 
+    return fib(n-2) + fib(n-1); 
+}
+
+
+
+
+
+
+
+
+
+//p4
+//Basically the same as exercise 3, although this time you mustn't use recursion.
+//For extra exercise, give a big number (like 1000000) to both exercise 3 and 4 solutions and compare the execution times.
+
+
+
+
+
+
+
+
+#include <iostream> 
+using namespace std; 
+unsigned fib(unsigned n); 
+int main() 
+{ 
+    // Printing the first 20 Fibonacci sequence values 
+    for (unsigned i = 0; i < 20; i++){ 
+        cout << "fib(" << i << ") = " << fib(i) << endl; 
+    } 
+} 
+unsigned fib(unsigned n) 
+{ 
+    if (n < 2) 
+        return n; 
+    unsigned prev1 = 0; 
+    unsigned prev2 = 1; 
+    for (unsigned i = 0; i <= n-2; i++){ 
+        unsigned temp = prev1 + prev2; 
+        // Just doing a rotation of values, since only the last two are needed 
+        prev1 = prev2; 
+        prev2 = temp; 
+    } 
+    return prev2; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//p5
+//Create a calculator that takes a number, a basic math operator (+,-,*,/,^), and a second number all from user input,
+//and have it print the result of the mathematical operation. The mathematical operations should be wrapped inside of functions.
+
+
+
+
+#include <iostream> 
+float add(float a, float b) 
+{ 
+  return a + b; 
+} 
+float sub(float a, float b) 
+{ 
+  return a - b; 
+} 
+float mul(float a, float b) 
+{ 
+  return a * b; 
+} 
+float div(float a, float b) 
+{ 
+  if(b != 0) 
+  { 
+    return a / b; 
+     
+  } 
+  std::cout << "Error: division by zero.\n"; 
+  return 0; 
+} 
+float pow(float a, float b) 
+{ 
+  return pow(a, b); 
+} 
+float mod(float a, float b) 
+{ 
+  return fmod(a, b); 
+} 
+
+
+
+
+
+
+
+
