@@ -1,0 +1,34 @@
+
+arrays
+
+
+const int little = 6, medium = 10;
+int k, number[medium];
+
+int main(){
+
+for (k = 0; k < little; k++)
+   number[k] = k * k;
+for (k = little; k < medium; k++)
+   number[k] = number[k - 5];
+   
+   return 0;
+
+}
+
+
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    
+  char teams[ ] = {'L','a','k','e','r','s','\0','N','e','t','s','\0'};
+
+printf(" %s",teams);   
+   
+   
+
+}
