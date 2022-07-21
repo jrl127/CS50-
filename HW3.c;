@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+
+/* you may #include any additional libraries of your choice here */
+
+/* preprocessor definitions for true and false */
+#define true 1
+#define false 0
+
+/* function declaration */
+int isPalindrome(char input[]);
+
+int main()
+{
+    /* below code is totally optional; you may use the below method
+     * to test your target function. 
+    */
+    printf("%d", isPalindrome("11"));    /* 1 */
+    printf("%d", isPalindrome("A B a")); /* 1 */
+    printf("%d", isPalindrome("AB"));    /* 0 */
+    printf("%d", isPalindrome("a"));     /* 1 */
+    printf("%d", isPalindrome(" "));     /* 0 */
+    
+    /* 1, we don't count non-alphanumeric characters, 
+       so input is really A */
+    printf("%d", isPalindrome("!A!!!!"));
+    
+    /* etc */
+
+    return 0;
+}
+
+    
+int isPalindrome(char input[]) {
+    
+	int l = 0;
+int h = strlen(input) - 1;
+
+if(input[l]==' '){
+return 0;
+}else if(strlen(input)==1){
+return 1;
+}
+while (h > l)
+{
+
+if (input[l++] == input[h--])
+{
+return 1;
+}
+
+
+}
+return 0;
+    
+}
